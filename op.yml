@@ -1,4 +1,4 @@
-name: base64url.encode
+name: github.com/opspec-pkgs/base64url.encode
 description: base 64 URL encodes a string per RFC4648
 inputs:
   rawValue:
