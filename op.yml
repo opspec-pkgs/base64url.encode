@@ -1,0 +1,19 @@
+name: base64url.encode
+description: base 64 URL encodes a string per RFC4648
+inputs:
+  rawValue:
+    string:
+      description: string to encode
+outputs:
+  encodedValue:
+    string:
+      description: encoded string
+version: 1.0.0
+run:
+  container:
+    image: { ref: 'opspecpkgs/base64url.encode:1.0.0' }
+    cmd: [node, /index.js]
+    envVars: { rawValue }
+    files: { /index.js }
+    stdOut:
+      encodedValue=: encodedValue
