@@ -8,12 +8,12 @@ outputs:
   encodedValue:
     string:
       description: encoded string
-version: 1.0.0
+version: 1.0.1
 run:
   container:
-    image: { ref: 'opspecpkgs/base64url.encode:1.0.0' }
-    cmd: [node, /index.js]
+    image: { ref: 'opspecpkgs/base64url.encode:1.0.1' }
+    cmd: [node, /cmd.js]
     envVars: { rawValue }
-    files: { /index.js }
-    stdOut:
-      encodedValue=: encodedValue
+    files:
+      /cmd.js:
+      /encodedValue: $(encodedValue)
